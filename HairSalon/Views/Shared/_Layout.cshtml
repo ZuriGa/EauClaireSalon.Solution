@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <img src="~/img/logo.png">
+    <img src="~/img/logo.jpeg">
+    @await Html.PartialAsync("Header")
     <div class="card">
       @RenderBody()
     </div>
