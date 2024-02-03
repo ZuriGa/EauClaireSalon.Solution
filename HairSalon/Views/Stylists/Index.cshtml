@@ -15,7 +15,7 @@
   @foreach(Stylist stylist in Model)
   {
     <div class="card-body">
-      @Html.ActionLink($"{category.Name}", "Details", new { id = stylist.StylistId })
+      @Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })
     </div>
   }
 </div>
