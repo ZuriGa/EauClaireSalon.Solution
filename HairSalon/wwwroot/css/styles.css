@@ -12,9 +12,8 @@ div#footer {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 10px;
   text-align: center;
-  border-color: rgb(125, 197, 158);
+  background-image: linear-gradient(#CA61C3, white );
   border-style: outset;
-	background-image: url('../img/logo.jpeg');
 	border-radius: 20px;
 }
 
@@ -22,7 +21,7 @@ div#footer {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 20px;
-  background-color: rgb(162, 223, 189);
+  background-image: linear-gradient(#CA61C3, white);
   text-align: center;
 	padding-bottom: 20px;
 	padding: 2px 16px;
@@ -30,8 +29,7 @@ div#footer {
 	display: block;
   margin-left: auto;
   margin-right: auto;
-  
-
+  line-height: 20px;
 }
 
 .card:hover {
@@ -48,4 +46,9 @@ img {
   margin-left: auto;
   margin-right: auto;
   
+}
+
+.spacing {
+  padding-top: 15px;
+  line-height: 30px;
 }

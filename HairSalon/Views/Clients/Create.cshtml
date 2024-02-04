@@ -4,27 +4,30 @@
 
 @model HairSalon.Models.Client
 
-<h4>Add a new Client</h4>
-
-<p><strong>NOTE:</strong> You need to select a stylist before adding an client ❕</p>
+<div class="card-header">
+  <h3>Add a new Client</h3>
+</div>
+<br/>
+<h5><strong>NOTE:</strong> You need to select a stylist before adding an client❕</h5>
 <p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist.</p>
 
+<div id="spacing" class="spacing">
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
+  @Html.LabelFor(model => model.Name, "Name : ")
   @Html.TextBoxFor(model => model.Name)
-
-  @Html.LabelFor(model => model.PhoneNumber)
+  <br />
+  @Html.LabelFor(model => model.PhoneNumber, "Phone Number :")
   @Html.TextBoxFor(model => model.PhoneNumber)
-
-  @Html.LabelFor(model => model.Notes)
+  <br />
+  @Html.LabelFor(model => model.Notes, "Notes :")
   @Html.TextAreaFor(model => model.Notes)
-
+  <br />
   @Html.LabelFor(model => model.Stylist)
   @Html.DropDownList("StylistId")
 
-  <input type="submit" value="Add new client" class="btn btn-default" />
+  <input type="submit" value="Add new client" class="btn btn-outline-dark" />
 }
-
+</div>
 <p>@Html.ActionLink("Show all clients", "Index")</p>
 

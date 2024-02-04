@@ -8,6 +8,10 @@
 <h2>Stylist Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h4>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</h4>
+<h5>@Html.DisplayNameFor(model => model.HireDate, "Hired Date"): @Model.HireDate.ToShortDateString()</h5>
+
+
 
 @if (@Model.Clients.Count == 0)
 {

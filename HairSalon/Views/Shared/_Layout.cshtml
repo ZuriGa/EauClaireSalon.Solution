@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <img src="~/img/logo.jpeg">
     @await Html.PartialAsync("Header")
+    <br/>
+    <img src="~/img/logo.jpeg">
     <div class="card">
       @RenderBody()
     </div>
