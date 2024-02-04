@@ -20,7 +20,7 @@ namespace HairSalon.Controllers
     {
       List<Client> model = _db.Clients
                             .Include(client => client.Stylist)
-                            .ToList()
+                            .ToList();
       return View(model);
     }
 
@@ -54,7 +54,7 @@ namespace HairSalon.Controllers
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
-      return View(thisClient)
+      return View(thisClient);
     }
 
     [HttpPost]

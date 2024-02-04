@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace HairSalon.Controllers
 {
-  public class StylistController : Controller
+  public class StylistsController : Controller
   {
     private readonly HairSalonContext _db;
 
-    public StylistController(HairSalonContext db)
+    public StylistsController(HairSalonContext db)
     {
       _db = db;
     }
@@ -21,7 +21,7 @@ namespace HairSalon.Controllers
       return View(model);
     }
 
-    public ActionResult Creat()
+    public ActionResult Create()
     {
       return View();
     }
@@ -37,9 +37,9 @@ namespace HairSalon.Controllers
     public ActionResult Details(int id)
     {
       Stylist thisStylist = _db.Stylists
-                                  .Include(stylist => stylist.Clients)
-                                  .FirstOrDefault(stylist => stylist.ClientId == id);
-        return View(thisStylist);
+                                .Include(stylist => stylist.Clients)
+                                .FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     public ActionResult Edit(int id)

@@ -9,7 +9,7 @@ namespace HairSalon.Models
 
     public string Name { get; set; }
 
-    public int PhoneNumber{ get; set; }
+    public int PhoneNumber { get; set; }
     public string Notes { get; set; }
 
     public DateTime AppointmentDate { get; set; }
