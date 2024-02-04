@@ -9,19 +9,20 @@
 
 @if (@Model.Count == 0)
 {
-  <h3>No Stylists have been added yet ❕</h3>
+  <h3>No Stylists have been added yet❕</h3>
 }
 
 
-<div class="card">
-  @foreach(Stylist stylist in Model)
+<div class="card-columns">
+  @foreach (Stylist stylist in Model)
   {
     <div class="card-body">
-      @Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })
+      <h5 class="card-title">@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId }) </h5>
     </div>
   }
 </div>
 
-<p>@Html.ActionLink("Add new Stylist ✨", "Create")</p>
-<p>@Html.ActionLink("Add new Client", "Create", "Clients")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<br/>
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Add new Stylist ✨", "Create")</button>
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Add new Client 💅", "Create", "Clients")</button>
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Home", "Index", "Home")</button>

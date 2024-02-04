@@ -7,12 +7,18 @@
 <h2>Client Details</h2>
 <hr />
 
+<div class="card-body">
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</h3>
 <h3>@Html.DisplayNameFor(model => model.Notes): @Html.DisplayFor(model => model.Notes)</h3>
+<h4>@Html.DisplayNameFor(model => model.PhoneNumber, "Phone Number"): @Html.DisplayFor(model => model.PhoneNumber)</h4>
+<h5>@Html.DisplayNameFor(model => model.AppointmentDate, "Appointment Date"): @Html.DisplayFor(model => model.AppointmentDate, "{0:MM/dd/yyyy}", new { @class = "form-control" })</h5>
 
-<h3>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist.Name)</h3>
 
-<p>@Html.ActionLink("Edit Client", "Edit", new { id = Model.ClientId })</p>
-<p>@Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<br />
+<h4>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist.Name)</h4>
+</div>
+
+<br />
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Edit Client ✨", "Edit", new { id = Model.ClientId })</button>
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId })</button>
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Back to list", "Index")</button>

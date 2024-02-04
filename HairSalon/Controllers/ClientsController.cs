@@ -26,6 +26,11 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
+      if (!_db.Stylists.Any())
+      {
+        TempData["ErrorMessage"] = "Cannot add a client without any stylists. Please add a stylist first.";
+        return RedirectToAction("Index", "Stylists");
+      }
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View();
     }
@@ -35,7 +40,9 @@ namespace HairSalon.Controllers
     {
       if (client.StylistId == 0)
       {
-        return RedirectToAction("Create");
+        TempData["ErrorMessage"] = "Please select a stylist for the client.";
+        ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+        return View(client);
       }
       _db.Clients.Add(client);
       _db.SaveChanges();

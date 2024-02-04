@@ -5,29 +5,34 @@
 @model HairSalon.Models.Stylist
 @using HairSalon.Models
 
+
 <h2>Stylist Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h4>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</h4>
-<h5>@Html.DisplayNameFor(model => model.HireDate): @Html.DisplayFor(model => model.HireDate, "{0:MM/dd/yyyy}")</h5>
+<div class="card-body">
+  <h3 class="card-title">@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+  <h4>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</h4>
+  <h6>@Html.DisplayNameFor(model => model.HireDate): @Html.DisplayFor(model => model.HireDate, "{0:MM/dd/yyyy}")</h6>
+</div>
 
 
+<div class="card-body">
+  @if (@Model.Clients.Count == 0)
+  {
+    <h3>No Clients have been added to this Stylist yet ❕</h3>
+  }
+  else
+  {
+    <h3 class="card-title">Clients: </h3>
+    <ul class="list-group">
+      @foreach (Client client in Model.Clients)
+      {
+        <li class="list-group-item">@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</li>
+      }
+    </ul>
+  }
+</div>
 
-@if (@Model.Clients.Count == 0)
-{
-  <h3>No Clients have been added to this Stylist yet ❕</h3>
-}
-else 
-{
-  <h3>Clients : </h3>
-  <ul>
-    @foreach (Client client in Model.Clients)
-    {
-      <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</li>
-    }
-  </ul>
-}
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Edit Stylist ✨", "Edit", new { id = Model.StylistId })</button>
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</button>
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Back to list", "Index")</button>
 
-<p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>

@@ -4,12 +4,16 @@
 
 @model HairSalon.Models.Client
 
-<h2>Are you sure you want to Delete this client?</h2>
+<h2 id="delete">Are you sure you want to Delete this client?</h2>
+<hr />
 
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
+<div class="card-body">
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name) </h3>
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" class="btn btn-outline-light text-dark btn-lg" />
+  }
+</div>
 
-@Html.ActionLink("Back to List", "Index")
+<br />
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Back to List", "Index")</button>

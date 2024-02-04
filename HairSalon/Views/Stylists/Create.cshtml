@@ -8,19 +8,25 @@
   <h3>Add new stylist</h3>
 </div>  
 
+<div class="card-columns">
+
+<div class="card-body">
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name, "Name :")
-  @Html.TextBoxFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
   <br />
   @Html.LabelFor(model => model.PhoneNumber, "Phone Number :")
-  @Html.TextBoxFor(model => model.PhoneNumber)
+  @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
   <br />
   @Html.LabelFor(model => model.HireDate, "Hire Date :")
-  @Html.TextBoxFor(model => model.HireDate)
+  @Html.TextBoxFor(model => model.HireDate, "{0:MM/dd/yyyy}", new { @class = "form-control" })
   <br />
-  <input type="submit" value="Add new stylist" />
+  <input type="submit" value="Add new stylist" class="btn btn-outline-light text-dark btn-lg" />
 }
-
-<p>@Html.ActionLink("Show all stylist", "Index")
-</p>
+</div>
+<br />
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Show all stylist", "Index")
+</button>
+</div>
+<br />

@@ -1,18 +1,23 @@
+html {
+  scroll-behavior: smooth;
+}
+
 div#footer {
 	position:fixed;
 	bottom:0px;
 	left:0px;
 	width:100%;
 	color:#CCC;
-	background:#333;
+	background:#00487C;
 	padding:8px;
+  text-align: center;
 }
 
 #header {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 10px;
   text-align: center;
-  background-image: linear-gradient(#CA61C3, white );
+  background-image: linear-gradient(#00487C, white );
   border-style: outset;
 	border-radius: 20px;
 }
@@ -21,9 +26,9 @@ div#footer {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 20px;
-  background-image: linear-gradient(#CA61C3, white);
+  background-image: linear-gradient(#027BCE, white);
   text-align: center;
-	padding-bottom: 20px;
+	padding-bottom: 25px;
 	padding: 2px 16px;
 	width: 80%;
 	display: block;
@@ -49,6 +54,38 @@ img {
 }
 
 .spacing {
-  padding-top: 15px;
-  line-height: 30px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  line-height: 25px;
+}
+
+.card-body {
+  background-color: white;
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 25px;
+  padding-bottom: 20px;
+  padding: 15px 20px;
+
+}
+
+.card-body:hover {
+  background-color: #cde9fb9d;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+a{
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+#delete{
+  color: ivory;
+  animation: glow 1s ease-in-out infinite alternate;
 }

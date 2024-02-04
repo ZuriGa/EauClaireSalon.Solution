@@ -2,32 +2,43 @@
   Layout = "_Layout";
 }
 
+
 @model HairSalon.Models.Client
 
 <div class="card-header">
   <h3>Add a new Client</h3>
 </div>
-<br/>
-<h5><strong>NOTE:</strong> You need to select a stylist before adding an client❕</h5>
-<p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist.</p>
+<br />
 
-<div id="spacing" class="spacing">
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name, "Name : ")
-  @Html.TextBoxFor(model => model.Name)
-  <br />
-  @Html.LabelFor(model => model.PhoneNumber, "Phone Number :")
-  @Html.TextBoxFor(model => model.PhoneNumber)
-  <br />
-  @Html.LabelFor(model => model.Notes, "Notes :")
-  @Html.TextAreaFor(model => model.Notes)
-  <br />
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
 
-  <input type="submit" value="Add new client" class="btn btn-outline-dark" />
-}
+<div class="card-body">
+  <h5><strong>NOTE:</strong> You need to select a stylist before adding an client❕</h5>
+  <p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist.</p>
+
+  <div id="spacing" class="spacing">
+
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Name, "Name : ")
+      @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+      <br />
+      @Html.LabelFor(model => model.PhoneNumber, "Phone Number :")
+      @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+      <br />
+      @Html.LabelFor(model => model.Notes, "Notes :")
+      @Html.TextAreaFor(model => model.Notes, new { @class = "form-control" })
+      <br />
+      @Html.LabelFor(model => model.AppointmentDate, "Appointment Date :")
+      @Html.TextBoxFor(model => model.AppointmentDate, "{0:MM/dd/yyyy}", new { @class = "form-control" })
+      <br />
+      @Html.LabelFor(model => model.Stylist)
+      @Html.DropDownList("StylistId")
+
+      <input type="submit" value="Add new client" class="btn btn-outline-light text-dark btn-lg" />
+    }
+  </div>
+
 </div>
-<p>@Html.ActionLink("Show all clients", "Index")</p>
 
+<button type="button" class="btn btn-outline-light text-dark btn-lg">@Html.ActionLink("Show all clients",
+  "Index")</button>
