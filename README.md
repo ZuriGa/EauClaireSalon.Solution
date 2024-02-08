@@ -11,7 +11,8 @@
 * CSS
 * Bootstrap
 * .NET
-* VScode
+* VScode 
+* MySQL Workbench
 * Entity Framework Core 6.0 
 * Pomelo.EntityFrameworkCore.MySql
 
@@ -36,9 +37,13 @@
 * _Click "create new fork" and then select your account as the "Owner", after this you have your own copy of this repository to your GitHub Account._
 
 ### Setting up your database 
-*  Install MySQL Server (if you haven't already)
-* Connect to MySQL Server - <br />
-Use a MySQL client or command-line tool to connect. <br /> 
+* To run this application you can import the zuri_gallegos.sql file to MySQL Workbench.
+* In MySQL Workbench Navigate to Administration tab > select `Data Import/Restore`.  <br />
+* In `Import Options` select `Import` from `Self-Contained File`.
+* Navigate to zuri_gallegos.sql file, under Default Schema to be imported to, select the `New` button. <br />
+* Once your database options are selected press `Start Import`. <br />
+
+* Use a MySQL client or command-line tool to connect. <br /> 
 
       For example: mysql -u[YOUR-USERNAME] -p[YOUR-PASSWORD];
 
@@ -77,7 +82,7 @@ Next create a table in our database
 
 * Optionally, you can run `dotnet build` to compile this console app without running it.
 
-* Tests can be found in Bakery.Tests directory. You can run test by navigating to the test directory and running `dotnet test`
+* Tests can be run under ProjectName.Tests directory. You can run test by navigating to the test directory and running `dotnet test`
 
 
 ## Known Bugs
